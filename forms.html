@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="awit.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Personal Information</title>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="website.html"><img class="iit" src="msuit.png" alt="msu iit"></a>
+        <div class="container">
+            <header>Student Information</header>
+            <form action="#" id="studentForm">
+                    <div class="form-first">
+                        <div class="details personal">
+                        <span class="title"> Student Personal Information</span>
+                        <div class="fields">
+                            
+                            <div class="input-field">
+                                <label>Full name</label>
+                                <input type="text" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Birth date</label>
+                                <input type="date" placeholder="Enter your Birthdate" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Age</label>
+                                <input type="number" placeholder="Enter your Age" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Email</label>
+                                <input type="text" placeholder="Enter your Email" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="mobileNumber">Mobile Number</label>
+                                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile Number" required>
+                                <small class="hint">Please enter a valid mobile number.</small>
+                            </div>
+                            
+                            <div class="input-field">
+                                <label>Nationality</label>
+                                <input type="text" placeholder="Enter your Nationality" required>
+                            </div>
+                            
+                            <div class="input-field">
+                                <label for="gender">Gender</label>
+                                <select id="gender" name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <div class="details address">
+                            <span class="title">Address</span>
+                            <div class="fields">
+
+                            <div class="input-field">
+                                <label>Home City/Municipality</label>
+                                <input type="text" placeholder="Enter your Home City/Municipality" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Province</label>
+                                <input type="text" placeholder="Enter your Province" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Barangay</label>
+                                <input type="text" placeholder="Enter your Barangay" required>
+                            </div> 
+
+                            <div class="input-field">
+                                <label>Purok/Street</label>
+                                <input type="text" placeholder="Enter your Purok/Street" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Country</label>
+                                <input type="text" placeholder="Enter your Country" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Zip Code</label>
+                                <input type="text" placeholder="Enter your Zip Code" required>
+                            </div>
+
+                           
+                            </div>
+                        </div>
+
+                        <div class="details school ">
+                            <span class="title"> School Personal Information</span>
+                            <div class="fields">
+
+                            <div class="input-field">
+                                <label>Senior High School Address</label>
+                                <input type="text" placeholder="Enter Senior High School Address" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label> Senior High School Name</label>
+                                <input type="text" placeholder="Enter Your School Name" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="shsTrack">Senior High School Track</label>
+                                <select id="shsTrack" name="shsTrack" required>
+                                    <option value="">Select a Track</option>
+                                    <option value="STEM">STEM (Science, Technology, Engineering, and Mathematics)</option>
+                                    <option value="ABM">ABM (Accountancy, Business, and Management)</option>
+                                    <option value="HUMSS">HUMSS (Humanities and Social Sciences)</option>
+                                    <option value="GAS">GAS (General Academic Strand)</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                            
+                            <div class="input-field">
+                                <label for="Category School">Category of School</label>
+                                <select id="Category School" name="Category School" required>
+                                    <option value="">Select a Category</option>
+                                    <option value="Private School">Private School</option>
+                                    <option value="Public School">Public School</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="Code Degree Program Choices"> Degree Program Choice </label>
+                                <select id="Code Degree Program Choices" name="Degree Program Choice" required>
+                                    <option value="">Select Degree Program</option>
+                                    <option value="First Program Choice">First Program Choice</option>
+                                    <option value="Second Program Choice">Second Program Choice</option>
+                                    <option value="Third Program Choice">Third Program Choice</option>
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+
+                            
+
+                            </div>
+                            </div>
+                        </div>
+                        <div class="sbmt">
+                            <button type="button" onclick="validateForm()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script>
+                function validateForm() {
+                    // Get all form elements
+                    var inputs = document.querySelectorAll('#studentForm input, #studentForm select, #studentForm textarea');
+        
+                    // Flag to check if all inputs are filled
+                    var isValid = true;
+        
+                    inputs.forEach(function (input) {
+                        // Check if the input value is empty
+                        if (input.value.trim() === '') {
+                            isValid = false;
+        
+                            // Add a class to highlight the input with a missing value
+                            input.classList.add('missing-input');
+                        } else {
+                            // Remove the class if the input has a value
+                            input.classList.remove('missing-input');
+                        }
+                    });
+        
+                    // Show an alert if any input is missing
+                    if (!isValid) {
+                        alert('Please fill in all the required fields.');
+                    } else {
+                        // If all inputs are filled, you can submit the form or redirect to another page
+                        document.getElementById('studentForm').submit();
+                        // OR
+                        // window.location.href = 'dashboard.html';
+                    }
+                }
+            </script>
+        </body>
+        </html>

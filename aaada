@@ -1,0 +1,46 @@
+.wrapper .form_wrap .grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  grid-gap: 20px;
+  text-align: center; /* Changed from 'justify' to 'center' */
+}
+
+.wrapper .form_wrap .input_wrap1 {
+  width: 100%;
+  color: black;
+  text-align: center; /* Changed from 'justify' to 'center' */
+}
+
+.wrapper .form_wrap .input_wrap1 label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px; /* Added a specific value for margin-bottom */
+  text-align: center; /* Centered the label text */
+}
+
+.wrapper .form_wrap .input_wrap .input {
+  width: calc(100% - 20px);
+  padding: 10px; /* Increased padding for better visual appeal */
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.wrapper .form_wrap .grid-form .input_wrap1 .input {
+  width: calc(100% - 10px);
+  padding: 10px;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.wrapper .form_wrap .input_wrap1 label {
+  padding: 10px;
+}
+
+.wrapper .form_wrap .input_wrap .input:focus {
+  border-color: var(--primary);
+  border-radius: 10px;
+}
